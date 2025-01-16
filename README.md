@@ -89,8 +89,7 @@ Before running this project, ensure you have the following installed:
 - Request Body:
   ```json
   {
-    "invoiceNumber": "INV-1001",
-    "customerDetails": {
+      "customerDetails": {
       "name": "Jane Smith",
       "email": "jane.smith@example.com",
       "phone": "1234567890",
@@ -104,7 +103,6 @@ Before running this project, ensure you have the following installed:
     ],
     "taxRates": 10,
     "discount": 50,
-    "paymentStatus": "Pending"
   }
   ```
 
