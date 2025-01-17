@@ -25,15 +25,4 @@ userSchema.methods.toJSON = function () {
   return _.pick(userObj, "_id", "name", "email", "role");
 };
 
-// User pre save
-userSchema.pre("save", async function (next) {
-  if (!this.isModified("password")) return next();
-  this.password = bcrypt.hash(this.password, 10);
-  next();
-});
-
-// User comparePassword
-userSchema.methods.comparePassword = function (candidatePassword) {
-  return bcrypt.compare(candidatePassword, this.password);
-};
 module.exports = mongoose.model("User", userSchema);
